@@ -1,0 +1,18 @@
+﻿@model GetProductRequestPageVM
+
+<!--asp-controller="Product" demek bu form hangi controllera post edilecek   hangi actiona post edilecek ordan asp-action="CreateProduct"
+    bu actionın hani methoduna post edilcek method="post
+    asp-for="UnitPrice" burada hani alana veri eklenecek
+    <button> post etmekle form içerinde görevlidir.
+-->
+<form asp-controller="Product" asp-action="CreateProduct" method="post">
+    <div>
+        <input type="text" asp-for="Product.ProductName" placeholder="Lütfen ürün ismi giriniz"  class="form-control"/>
+    </div>
+   <div>
+    <input type="number" asp-for="Product.UnitPrice" placeholder="Lütfen fiyat giriniz." class="form-control"/>
+    </div>
+    <button class="btn btn-primary">
+        EKLE
+    </button>
+</form>

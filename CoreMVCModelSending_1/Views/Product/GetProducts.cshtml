@@ -1,0 +1,26 @@
+﻿@model GetProductsPageVM
+<!--  List<Product> bu tekli veri göndereceğimiz zaman yazılır.Product classından örnek olarak-->
+<!--@using CoreMVCModelSending_1.Models.Tools    bunu frontendin de görmesi için viewImport kısmına ekliyoruz.-->
+
+Yeni Ürün eklemek için => <a asp-controller="Product" asp-action="CreateProduct">tıklayınız.</a>
+<!--BACKEND DEN FRONTEND E VERİ GÖNDERME-->
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Urun ID</th>
+            <th>Urun Ismi</th>
+            <th>Urun Fiyatı</th>
+        </tr>
+    </thead>
+    <tbody>
+        <h1>Gelen Kategori => @Model.Category.CategoryName</h1>
+        @foreach(Product item in Model.Products) { 
+        
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.ProductName</td>
+            <td>@item.UnitPrice</td>
+        </tr>
+        }
+    </tbody>
+</table>
